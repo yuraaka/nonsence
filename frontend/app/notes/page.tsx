@@ -20,6 +20,8 @@ export default function NotesPage() {
     <main>
       <h1>Notes</h1>
       <ul>
+        <li>Example note 1</li>
+        <li>Example note 2</li>
         {notes.map((note: any) => (
           <li key={note.id}>{note.content}</li>
         ))}
