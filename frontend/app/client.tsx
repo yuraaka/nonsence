@@ -1,10 +1,32 @@
+// app/notes/page.tsx
 'use client';
 
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { addNote } from '../../../store/notes-slice';
+import { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
-export default function AddNoteClient() {
+import Note from '../types/note';
+import NoteList from '../components/notes-list';
+
+import { RootState } from '../store';
+import { addNote } from '../store/notes-slice';
+import { setNotes } from '../store/notes-slice';
+
+interface NotesClientProps {
+  initialNotes: Note[];
+}
+
+export function Notes({ initialNotes }: NotesClientProps) {
+  const notes = useSelector((state: RootState) => state.notes.notes);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setNotes(initialNotes));
+  }, [dispatch, initialNotes]);
+
+  return <NoteList />
+}
+
+export function AddNote() {
   const [content, setContent] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -40,8 +62,7 @@ export default function AddNoteClient() {
   };
 
   return (
-    <main>
-      <h1>Add Note</h1>
+    <div>
       <form onSubmit={handleAdd}>
         <input
           type="text"
@@ -55,6 +76,6 @@ export default function AddNoteClient() {
         </button>
       </form>
       {error && <div style={{ color: 'red', marginTop: 8 }}>{error}</div>}
-    </main>
+    </div>
   );
 }

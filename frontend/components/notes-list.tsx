@@ -10,5 +10,5 @@ export default function NotesList() {
         <li key={note.id}>{note.content}</li>
       ))}
     </ul>
-  );
+  )
 }

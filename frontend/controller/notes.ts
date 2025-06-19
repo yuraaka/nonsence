@@ -9,5 +9,6 @@ export async function getNotes() {
 
 export async function addNote(content: string) {
   // todo: Save note to DB or any source
-  return { id: '2', content: content };
+  const timestamp = Date.now();
+  return { id: timestamp, content: content };
 }

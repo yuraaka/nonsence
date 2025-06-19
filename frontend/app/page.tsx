@@ -1,12 +1,14 @@
 // app/page.tsx
-import Link from 'next/link';
+import { Notes, AddNote } from './client';
+import { getNotes } from '../controller/notes';
 
-export default function Home() {
+export default async function Home() {
+  const notes = await getNotes()
   return (
     <main>
       <h1>My iOS Notes App</h1>
-      <Link href="/notes" className="ios-link">View Notes</Link>
-      <Link href="/notes/add" className="ios-link">Add Note</Link>
+      <AddNote />
+      <Notes initialNotes={notes} />
     </main>
   );
 }
