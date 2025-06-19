@@ -4,7 +4,7 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../store';
-import { setNotes } from '../../store/notesSlice';
+import { setNotes } from '../../store/notes-slice';
 
 export default function NotesPage() {
   const notes = useSelector((state: RootState) => state.notes.notes);

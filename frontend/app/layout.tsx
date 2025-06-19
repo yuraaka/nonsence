@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import ReduxProvider from './ReduxProvider';
+import ReduxProvider from './redux-provider';
 import '../styles/notes-ios.css';
 
 export default function RootLayout({ children }: { children: ReactNode }) {

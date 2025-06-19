@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
-import notesReducer from './notesSlice';
-import userReducer from './userSlice';
+import notesReducer from './notes-slice';
+import userReducer from './user-slice';
 
 export const store = configureStore({
   reducer: {

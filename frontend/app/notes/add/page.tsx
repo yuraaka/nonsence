@@ -3,7 +3,7 @@
 
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addNote } from '../../../store/notesSlice';
+import { addNote } from '../../../store/notes-slice';
 
 export default function AddNotePage() {
   const [content, setContent] = useState('');
