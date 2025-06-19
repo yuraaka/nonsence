@@ -1,0 +1,36 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Next.js: debug server-side",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run dev",
+      "cwd": "${workspaceFolder}/frontend",
+      "sourceMaps": true,
+      "sourceMapPathOverrides": {
+        "/turbopack/[project]/*": "${webRoot}/*"
+      }
+    },
+    {
+      "name": "Next.js: debug full stack",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/frontend/node_modules/.bin/next",
+      "runtimeArgs": ["--inspect"],
+      "runtimeExecutable": "/opt/homebrew/bin/node",
+      "skipFiles": ["<node_internals>/**"],
+      "sourceMaps": true,
+      "sourceMapPathOverrides": {
+        "/turbopack/[project]/*": "${webRoot}/*"
+      },
+      "serverReadyAction": {
+        "action": "debugWithChrome",
+        "killOnServerStop": true,
+        "pattern": "- Local:.+(https?://.+)",
+        "uriFormat": "%s",
+        "webRoot": "${workspaceFolder}/frontend"
+      }
+    }
+  ]
+}
