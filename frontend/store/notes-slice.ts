@@ -5,11 +5,11 @@ export interface Note {
   content: string;
 }
 
-interface NotesState {
+interface NoteState {
   notes: Note[];
 }
 
-const initialState: NotesState = { notes: [] };
+const initialState: NoteState = { notes: [] };
 
 const notesSlice = createSlice({
   name: 'notes',

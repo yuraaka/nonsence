@@ -13,7 +13,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "sourceMap": true,
+    "sourceMap": true,  // remove for release
     "plugins": [
       {
         "name": "next"

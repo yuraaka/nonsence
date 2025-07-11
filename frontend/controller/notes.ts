@@ -1,4 +1,3 @@
-// lib/notes.ts
 export async function getNotes() {
   // todo: Fetch notes from DB or any source
   return [

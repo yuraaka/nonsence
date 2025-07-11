@@ -2,12 +2,12 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { /*useSelector,*/ useDispatch } from 'react-redux';
 
 import Note from '../types/note';
 import NoteList from '../components/notes-list';
 
-import { RootState } from '../store';
+//import { RootState } from '../store';
 import { addNote } from '../store/notes-slice';
 import { setNotes } from '../store/notes-slice';
 
@@ -16,7 +16,7 @@ interface NotesClientProps {
 }
 
 export function Notes({ initialNotes }: NotesClientProps) {
-  const notes = useSelector((state: RootState) => state.notes.notes);
+  //const notes = useSelector((state: RootState) => state.notes.notes);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -54,8 +54,12 @@ export function AddNote() {
       const newNote = await res.json();
       dispatch(addNote(newNote));
       setContent('');
-    } catch (err: any) {
-      setError(err.message || 'An error occurred');
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError('An error occurred');
+      }
     } finally {
       setLoading(false);
     }
