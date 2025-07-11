@@ -1,5 +1,7 @@
 
-version: '3.9'
+include:
+  - apigw/docker-compose.yaml
+
 services:
   nextapp:
     container_name: frontend
