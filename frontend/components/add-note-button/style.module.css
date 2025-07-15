@@ -1,0 +1,92 @@
+/* AddNoteForm.module.css */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 24px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 6px 32px rgba(0, 0, 0, 0.08);
+}
+
+.form label {
+  display: block;
+  width: 100%;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.form input {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  background: #f2f2f7;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease;
+}
+
+.form input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #007aff99;
+  background: #fff;
+}
+
+.form input:disabled {
+  background: #e5e5ea;
+  color: #8e8e93;
+}
+
+.form button {
+  display: inline-block;
+  background: linear-gradient(90deg, #007aff 80%, #005ecb 100%);
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 122, 255, 0.15);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+  user-select: none;
+}
+
+.form button:hover:not(:disabled) {
+  background: linear-gradient(90deg, #005ecb 80%, #007aff 100%);
+  box-shadow: 0 4px 14px rgba(0, 122, 255, 0.25);
+}
+
+.form button:disabled {
+  background: #a0a0a0;
+  cursor: not-allowed;
+  box-shadow: none;
+  color: #e0e0e0;
+}
+
+.form button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #007aff99;
+}
+
+.error {
+  color: #ff3b30;
+  font-size: 0.9rem;
+  margin-top: 8px;
+  text-align: center;
+}

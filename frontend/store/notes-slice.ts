@@ -7,9 +7,10 @@ export interface Note {
 
 interface NoteState {
   notes: Note[];
+  yuraaka: string;
 }
 
-const initialState: NoteState = { notes: [] };
+const initialState: NoteState = { notes: [], yuraaka: 'yuraaka' };
 
 const notesSlice = createSlice({
   name: 'notes',

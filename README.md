@@ -14,3 +14,4 @@
 ## Backlog
 - api-gateway between browser & server
 - add auth
+- grafana & tempo & prometheos

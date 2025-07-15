@@ -1,4 +1,4 @@
-import { addNote } from '@/controller/notes';
+import { addNote } from '@/services/notes';
 import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {

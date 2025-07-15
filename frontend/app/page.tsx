@@ -1,14 +1,15 @@
 // app/page.tsx
-import { Notes, AddNote } from './client';
-import { getNotes } from '../controller/notes';
+import AddNoteButton from '@/components/add-note-button/template';
+import NoteList from '@/components/note-list/template'
+import { getNotes } from '../services/notes';
 
 export default async function Home() {
   const notes = await getNotes()
   return (
     <main>
-      <h1>My iOS Notes App</h1>
-      <AddNote />
-      <Notes initialNotes={notes} />
+      <h1>Notes App</h1>
+      <AddNoteButton />
+      <NoteList initialNotes={notes} />
     </main>
   );
 }
